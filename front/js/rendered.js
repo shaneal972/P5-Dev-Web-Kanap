@@ -11,6 +11,7 @@ import { optionColors } from "./utils.js";
  */
 function renderProducts(products, elementHtml) {
     for (let i = 0; i < products.length; i++) {
+        console.log(products[i]);
         elementHtml.innerHTML += `
         <a href="./product.html?id=${products[i]._id}">
             <article>
@@ -25,7 +26,7 @@ function renderProducts(products, elementHtml) {
 
 
 function renderProduct(product, elementHtml) {
-    
+    let select = document.querySelector('#colors');
     elementHtml.innerHTML = `
     <article>
     <div class="item__img">
@@ -59,15 +60,23 @@ function renderProduct(product, elementHtml) {
         </div>
 
         <div class="item__content__addButton">
-        <button id="addToCart">Ajouter au panier</button>
+            <a id="link-add">
+                <button id="addToCart">Ajouter au panier</button>
+            </a>
         </div>
 
     </div>
     </article>
     `;
 
-    optionColors(product.colors)
+    optionColors(product.colors, select);
 }
+
+
+function afficherPanier(tableauPanier) {
+    
+}
+
 
 
 export {

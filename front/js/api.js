@@ -36,7 +36,7 @@ async function getOneProduct(id) {
         let product = await response.json();
         return product
     } catch (error) {
-        console.log("UNe erreur s'est produite ", error.message);
+        console.log("Une erreur s'est produite ", error.message);
     }
        
 }
